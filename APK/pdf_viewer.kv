@@ -1,0 +1,15 @@
+<PDFViewer>:
+    orientation: 'vertical'
+    FileChooserListView:
+        id: filechooser
+        on_selection: root.load_pdf(self, self.selection)
+    TextInput:
+        id: key_input
+        hint_text: 'Enter AES Key'
+        password: True
+    Button:
+        text: 'Load PDF'
+        on_press: root.decrypt_and_load_pdf(self)
+    Label:
+        id: pdf_label
+        text: 'Select an encrypted PDF file to view'
